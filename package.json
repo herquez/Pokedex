@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/herquez/pokedexRepository/issues"
   },
-  "homepage": "https://github.com/herquez/pokedexRepository#readme"
+  "homepage": "https://github.com/herquez/pokedexRepository#readme",
+  "dependencies": {
+    "pokedex-promise-v2": "^3.3.2"
+  }
 }
