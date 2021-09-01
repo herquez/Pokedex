@@ -8,8 +8,47 @@
     <title>Pokedex herquez version</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="app"></div>
+    <header>
+        <div class="container">
+            <h1 class="title">Pokedex herquez version</h1>
+        </div>
+    </header>
+
+    <!-- Contenedor de navegacion -->
+    <div class="clearfix"></div>
+    <nav>
+        <div id="icono-menu">
+            <img src="img/hamburger.png" id="icono-ham">
+        </div>
+    
+        <div class="cont-menu active" id="menu">
+            <ul id="menuList">
+                <li>Pokemon</li>
+                <li>Tipo</li>
+                <li>Region</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor para las busquedas -->
+    <div id="searchMethod">
+        <label>Busqueda por nombre de pokemon ó mediante "id" en la Pokedex.</label>
+        <div class="clearfix"></div>
+        <button id="buscarBtn">Buscar</button>
+        <input type="text" id="pokemonSearch" placeholder="pokemon name / id">
+    </div>
+
+    <!-- Contenido de la busqueda -->
+    <div class="clearfix"></div>
+    <div id="content"></div>
+
+    <div class="clearfix"></div>
+    <footer>
+        herquez pokedex &copy; 2021
+    </footer>
+
     <script src="main.js" type="module"></script>
 </body>
 </html>

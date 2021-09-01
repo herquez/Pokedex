@@ -1,0 +1,131 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+:root{
+    --header-height: 100px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Salto de renglon */
+.clearfix{
+    clear: both;
+}
+
+/* Cabezera */
+header{
+    background: crimson;
+    font-family: Pokemon;
+    height: var(--header-height);
+    width: 100%;
+    text-align: center;
+    line-height: var(--header-height);
+    color: orange;
+    text-shadow: 3px 3px darkblue;
+    -webkit-text-stroke: 1px black;
+    border-bottom: 4px solid black;
+}
+
+nav{
+    float: left;
+}
+
+/*Para el boton hamburger*/
+#icono-menu{
+    margin: 40px 50px;
+    background-color: fuchsia;
+    position: relative;
+    z-index: 10;
+}
+
+#icono-menu img{
+    vertical-align: top;
+    width: 40px;
+    cursor: pointer;
+}
+
+/*Para el menu  hamburguesa*/
+.cont-menu{
+    background-color: crimson;
+    box-shadow: 2px 0px 5px 2px gray;
+    width: 400px;
+    height: calc(100% - var(--header-height));
+    position: absolute;
+    top: var(--header-height); left: 0;
+    transition: all 0.5s ease;
+}
+
+.cont-menu ul{
+    padding: 100px 0px 20px 0px;
+    list-style: none;
+}
+
+.cont-menu ul li{
+    color: wheat;
+    display: block;
+    font-family: Arial Black, Helvetica, sans-serif;
+    font-size: 25px;
+    text-decoration: yellow;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.cont-menu ul li:hover{
+    background-color: white;
+    color: darkred;
+}
+
+/*Desaparición del menu*/
+.active{
+    transform: translate(-410px);
+}
+
+/* Busqueda */
+#searchMethod{
+    float: left;
+    background: lightgreen;
+    width: calc(100% - 140px);
+    height: 120px;
+    text-align: center;
+    line-height: 30px;
+    padding: 40px;
+}
+
+#searchMethod label{
+    font: 1.25em Arial Black;
+}
+
+#searchMethod button{
+    color: rgb(207, 117, 0);
+    padding: 5px 3px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#searchMethod input{
+    color: black;
+    padding: 5px 3px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/*Contenido*/
+#content{
+    background: lightsalmon;
+    width: 100%;
+    min-height: 500px;
+    padding: 10px;
+}
+
+/*Pie de pagina*/
+footer{
+    background: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
