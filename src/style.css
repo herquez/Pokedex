@@ -36,7 +36,7 @@ nav{
 /*Para el boton hamburger*/
 #icono-menu{
     margin: 40px 50px;
-    background-color: fuchsia;
+    /* background-color: fuchsia; */
     position: relative;
     z-index: 10;
 }
@@ -67,8 +67,7 @@ nav{
     color: wheat;
     display: block;
     font-family: Arial Black, Helvetica, sans-serif;
-    font-size: 25px;
-    text-decoration: yellow;
+    font-size: 20px;
     padding: 10px 50px;
     cursor: pointer;
 }
@@ -83,42 +82,57 @@ nav{
     transform: translate(-410px);
 }
 
-/* Busqueda */
+/* Metodo de busqueda */
 #searchMethod{
     float: left;
-    background: lightgreen;
+    /* background: lightgreen; */
     width: calc(100% - 140px);
-    height: 120px;
+    min-height: 120px;
     text-align: center;
     line-height: 30px;
-    padding: 40px;
+    padding: 30px;
 }
 
 #searchMethod label{
-    font: 1.25em Arial Black;
+    font: 20px Arial Black;
 }
 
-#searchMethod button{
+/* Busqueda por pokemon */
+#searchByPokemon button{
     color: rgb(207, 117, 0);
     padding: 5px 3px;
-    text-align: center;
+    text-align: justify;
     display: inline-block;
     font-size: 16px;
 }
 
-#searchMethod input{
+#searchByPokemon input{
     color: black;
     padding: 5px 3px;
     display: inline-block;
     font-size: 16px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+/* Busqueda por tipos o por regiones*/
+#searchByType button, #searchByRegion button{
+    color: rgb(207, 117, 0);
+    padding: 5px 3px;
+    min-width: 45px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
 }
 
 /*Contenido*/
 #content{
-    background: lightsalmon;
+    background: crimson;
     width: 100%;
     min-height: 500px;
     padding: 10px;
+    border-top: 4px solid black;
 }
 
 /*Pie de pagina*/

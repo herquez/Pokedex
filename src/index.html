@@ -25,30 +25,27 @@
     
         <div class="cont-menu active" id="menu">
             <ul id="menuList">
-                <li>Pokemon</li>
-                <li>Tipo</li>
-                <li>Region</li>
+                <li id="poke">Pokemon</li>
+                <li id="type">Tipo</li>
+                <li id="reg">Region</li>
             </ul>
         </div>
     </nav>
 
     <!-- Contenedor para las busquedas -->
-    <div id="searchMethod">
-        <label>Busqueda por nombre de pokemon ó mediante "id" en la Pokedex.</label>
-        <div class="clearfix"></div>
-        <button id="buscarBtn">Buscar</button>
-        <input type="text" id="pokemonSearch" placeholder="pokemon name / id">
-    </div>
+    <div id="searchMethod"></div>
 
     <!-- Contenido de la busqueda -->
     <div class="clearfix"></div>
     <div id="content"></div>
 
+    <!-- Pie de pagina -->
     <div class="clearfix"></div>
     <footer>
         herquez pokedex &copy; 2021
     </footer>
 
-    <script src="main.js" type="module"></script>
+    <script src="menu.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 const iconoHamburger = document.querySelector('#icono-ham'), 
   menu = document.querySelector('#menu');
 
-//Click to hamburger
+//Click on hamburger
 iconoHamburger.addEventListener('click', (e) => {
   //hide hamburger
   menu.classList.toggle('active');
@@ -15,22 +15,7 @@ iconoHamburger.addEventListener('click', (e) => {
   }
 });
 
-//Search method
-const searchMethod = document.getElementById('searchMethod');
-function changeSearchMethod(itemPushed){
-  console.log(itemPushed);
-  switch (itemPushed){
-    case 'Pokemon':
-      break;
-    case 'Tipo':
-      break;
-    case 'Region':
-      break;
-    default:
-      break;
-  }
-}
-
+// Change searching method
 function getEventTarget(e) {
   e = e || window.event;
   return e.target || e.srcElement; 
@@ -42,27 +27,24 @@ menuHamburger.onclick = function(event) {//Click en algun elemento de la lista h
 
   menu.classList.toggle('active');//Hide menu
   iconoHamburger.setAttribute('src','img/hamburger.png');//Change hamburger icon
-  changeSearchMethod(target);//function to change results
+  changeSearchMethod(target.id);//function to change results
 };
 
-//get API
-const API_URL = 'https://pokeapi.co/api/v2/';
-
-fetch(`${API_URL}pokemon/1`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    var pokemon = data
-    console.log("nombre: ", pokemon.name)
-  });
-
-// var Pokedex = require('pokedex-promise-v2');
-// var P = new Pokedex();
-
-// P.getPokemonByName('eevee') // with Promise
-//   .then(function(response) {
-//     console.log(response);
-//   })
-//   .catch(function(error) {
-//     console.log('There was an ERROR: ', error);
-//   });
+//Search method
+const searchMethod = document.getElementById('searchMethod');
+function changeSearchMethod(itemPushed){
+  
+  switch (itemPushed){
+    case 'poke':
+      searchByPokemon();
+      break;
+    case 'type':
+      searchByType();
+      break;
+    case 'reg':
+      searchByRegion();
+      break;
+    default:
+      break;
+  }
+}
