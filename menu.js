@@ -9,6 +9,7 @@ function searchByPokemon(){
         <button id="buscarBtn">Buscar</button>
         <input type="text" id="pokemonSearch" placeholder="pokemon name / id">
     </div>`;
+    resultByPokemon();
 }
 
 // Busqueda por tipo
@@ -31,7 +32,6 @@ function searchByType(){
 
 // Busqueda por region
 function searchByRegion(){
-
     fetch(`${API_URL}region`)
     .then(response => response.json())
     .then(data => {

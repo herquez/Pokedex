@@ -1,6 +1,7 @@
-//Hamburger:
+//Hamburger
 const iconoHamburger = document.querySelector('#icono-ham'), 
   menu = document.querySelector('#menu');
+const content = document.getElementById('content');
 
 //Click on hamburger
 iconoHamburger.addEventListener('click', (e) => {
@@ -33,7 +34,7 @@ menuHamburger.onclick = function(event) {//Click en algun elemento de la lista h
 //Search method
 const searchMethod = document.getElementById('searchMethod');
 function changeSearchMethod(itemPushed){
-  
+  content.innerHTML = '';
   switch (itemPushed){
     case 'poke':
       searchByPokemon();

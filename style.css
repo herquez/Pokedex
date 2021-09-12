@@ -2,6 +2,8 @@
 
 :root{
     --header-height: 100px;
+    --menu-width: 250px;
+    --menu-width-ocultacion: -260px;
 }
 
 *{
@@ -29,14 +31,13 @@ header{
     border-bottom: 4px solid black;
 }
 
+/*Para el boton hamburger*/
 nav{
     float: left;
 }
 
-/*Para el boton hamburger*/
 #icono-menu{
     margin: 40px 50px;
-    /* background-color: fuchsia; */
     position: relative;
     z-index: 10;
 }
@@ -51,7 +52,7 @@ nav{
 .cont-menu{
     background-color: crimson;
     box-shadow: 2px 0px 5px 2px gray;
-    width: 400px;
+    width: var(--menu-width);
     height: calc(100% - var(--header-height));
     position: absolute;
     top: var(--header-height); left: 0;
@@ -79,13 +80,12 @@ nav{
 
 /*Desaparición del menu*/
 .active{
-    transform: translate(-410px);
+    transform: translate(var(--menu-width-ocultacion));
 }
 
 /* Metodo de busqueda */
 #searchMethod{
     float: left;
-    /* background: lightgreen; */
     width: calc(100% - 140px);
     min-height: 120px;
     text-align: center;
@@ -98,14 +98,6 @@ nav{
 }
 
 /* Busqueda por pokemon */
-#searchByPokemon button{
-    color: rgb(207, 117, 0);
-    padding: 5px 3px;
-    text-align: justify;
-    display: inline-block;
-    font-size: 16px;
-}
-
 #searchByPokemon input{
     color: black;
     padding: 5px 3px;
@@ -115,8 +107,8 @@ nav{
     margin-left: 10px;
 }
 
-/* Busqueda por tipos o por regiones*/
-#searchByType button, #searchByRegion button{
+/* Estilo de botones */
+#searchByType button, #searchByRegion button, #searchByPokemon button{
     color: rgb(207, 117, 0);
     padding: 5px 3px;
     min-width: 45px;
@@ -130,9 +122,38 @@ nav{
 #content{
     background: crimson;
     width: 100%;
-    min-height: 500px;
     padding: 10px;
     border-top: 4px solid black;
+}
+
+/* Resultados */
+.resultRow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 500px;
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+}
+
+.resultId{
+}
+
+.resultRow img{
+    width: 200px;
+    margin: 5px;
+}
+
+.pokeInfo ul li{
+    list-style: none;
+}
+
+.physicalResult{
+}
+
+.typeResult li{
+    list-style: none;
 }
 
 /*Pie de pagina*/
