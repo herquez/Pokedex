@@ -13,20 +13,35 @@ function searchByPokemon(){
 }
 
 // Busqueda por tipo
+function putTypesSelect(data){
+    var searchByType;
+    data.results.forEach(function(type) {
+        searchByType += `<option value="${type.name}">
+            ${type.name.replace(type.name[0], type.name[0].toUpperCase())}
+        </option>`;
+    });
+    searchByType += '</select>';
+    return searchByType;
+}
+
 function searchByType(){
     fetch(`${API_URL}type`)
     .then(response => response.json())
     .then(data => {
-        var searchByType = `<div id="searchByType">`;
-        var index = 0;
-        data.results.forEach(function(type, index) {
-            searchByType += `<button id="${type.name}Btn">${type.name}</button>`;
-            index++;
-            if((index % 10) == 0)
-                searchByType += `<div class="clearfix"></div>`;
-        });
-        searchByType += `</div>`;
+        var searchByType = `<div id="searchByType">
+            <label>Busqueda de pokemones por tipo(s)</label>
+            <div class="clearfix"></div>
+            <button id="buscarBtn">Buscar</button>
+            <select id="type1">`;
+                searchByType += putTypesSelect(data);
+            searchByType += `
+            <select id="type2">
+                <option value="none">None</option>`;
+                searchByType += putTypesSelect(data);
+            searchByType += `
+        </div>`;
         searchMethod.innerHTML = searchByType;
+        resultByType();
     });
 }
 

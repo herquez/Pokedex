@@ -22,7 +22,7 @@ header{
     background: crimson;
     font-family: Pokemon;
     height: var(--header-height);
-    width: 100%;
+    min-width: 400px;
     text-align: center;
     line-height: var(--header-height);
     color: orange;
@@ -31,7 +31,7 @@ header{
     border-bottom: 4px solid black;
 }
 
-/*Para el boton hamburger*/
+/* Para el boton hamburger */
 nav{
     float: left;
 }
@@ -48,7 +48,7 @@ nav{
     cursor: pointer;
 }
 
-/*Para el menu  hamburguesa*/
+/* Para el menu  hamburguesa */
 .cont-menu{
     background-color: crimson;
     box-shadow: 2px 0px 5px 2px gray;
@@ -78,7 +78,7 @@ nav{
     color: darkred;
 }
 
-/*Desaparición del menu*/
+/* Desaparición del menu */
 .active{
     transform: translate(var(--menu-width-ocultacion));
 }
@@ -97,8 +97,8 @@ nav{
     font: 20px Arial Black;
 }
 
-/* Busqueda por pokemon */
-#searchByPokemon input{
+/* Entradas de busquedas (pokemon y tipos) */
+#searchByPokemon input, #searchByType select{
     color: black;
     padding: 5px 3px;
     display: inline-block;
@@ -108,7 +108,7 @@ nav{
 }
 
 /* Estilo de botones */
-#searchByType button, #searchByRegion button, #searchByPokemon button{
+* button{
     color: rgb(207, 117, 0);
     padding: 5px 3px;
     min-width: 45px;
@@ -118,42 +118,92 @@ nav{
     margin: 10px;
 }
 
-/*Contenido*/
+/* Contenido */
 #content{
     background: crimson;
-    width: 100%;
-    padding: 10px;
+    min-width: 400px;
+    padding: 40px 10px;
     border-top: 4px solid black;
 }
 
-/* Resultados */
-.resultRow{
+/* Resultados Pokemon */
+#resultHeaderPokemon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 500px;
+    background-color: #99B2DD;
+    font-family: Pokemon ;
+    color: orange;
+    font-size: 25px;
+    text-shadow: 3px 3px darkblue;
+    -webkit-text-stroke: 1px black;
+    margin: 0px 20px;
+    padding: 10px;
+}
+
+.resultRowPokemon{
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-width: 500px;
     background-color: white;
-    margin: 20px;
+    font: 20px Arial Black ;
+    margin: 0px 20px;
     padding: 10px;
+    border-top: 3px groove;
 }
 
-.resultId{
+.resultRowPokemon li{
+    list-style: none;
 }
 
-.resultRow img{
+.resultRowPokemon img{
     width: 200px;
     margin: 5px;
 }
 
-.pokeInfo ul li{
-    list-style: none;
+/* Resultados Tipos */
+#resultHeaderType{
+    min-width: 500px;
+    background-color: white;
+    margin: 0px 20px;
+    padding: 10px;
+    border-bottom: 3px solid;
 }
 
-.physicalResult{
+.nameResult{
+    display: flex;
+    justify-content: center;
+    font-family: Pokemon;
+    color: orange;
+    font-size: 25px;
+    text-shadow: 3px 3px darkblue;
+    -webkit-text-stroke: 1px black;
 }
 
-.typeResult li{
+.damage_relations{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.damage_relation_column{
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.damage_relation_column p{
+    font: 18px Arial Black;
+}
+
+.damage_relation_column ul{
+    font: 18px Helvetica;
     list-style: none;
+    margin: 5px 25px;
 }
 
 /*Pie de pagina*/
@@ -161,6 +211,7 @@ footer{
     background: black;
     color: white;
     text-align: center;
+    min-width: 400px;
     height: 50px;
     line-height: 50px;
 }
