@@ -1,6 +1,6 @@
 const API_URL = 'https://pokeapi.co/api/v2/';
 
-// Busqueda por pokemon
+// Funcion para crear el interfaz de la busqueda por nombre o ID
 function searchByPokemon(){
     searchMethod.innerHTML = `
     <div id="searchByPokemon">
@@ -12,7 +12,7 @@ function searchByPokemon(){
     resultByPokemon();
 }
 
-// Busqueda por tipo
+// Llenar los combobox de la busqueda por tipo
 function putTypesSelect(data){
     var searchByType;
     data.results.forEach(function(type) {
@@ -24,6 +24,7 @@ function putTypesSelect(data){
     return searchByType;
 }
 
+// Funcion para crear el interfaz de la busqueda por tipo
 function searchByType(){
     fetch(`${API_URL}type`)
     .then(response => response.json())
@@ -46,19 +47,22 @@ function searchByType(){
 }
 
 // Busqueda por region
+// Funcion para poner los botones para buscar por region
 function searchByRegion(){
     fetch(`${API_URL}region`)
     .then(response => response.json())
     .then(data => {
-        var searchByRegion = `<div id="searchByRegion">`;
+        var searchByRegion = `<div id="searchByRegion">
+        <label>Busqueda de pokemones por región</label>`;
         var index = 0;
         data.results.forEach(function(region, index) {
-            searchByRegion += `<button id="${region.name}Btn">${region.name}</button>`;
+            searchByRegion += `<input type="radio" name="region" value="${region.name}Radio" id="${region.name}RadioId"> <label>${region.name}</label> `;
             index++;
             if((index % 10) == 0)
                 searchByRegion += `<div class="clearfix"></div>`;
         });
         searchByRegion += `</div>`;
         searchMethod.innerHTML = searchByRegion;
+        resultByRegion();
     });
 }

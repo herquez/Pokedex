@@ -80,3 +80,56 @@ function resultByType(){
         });
     });
 }
+
+function resultByRegion(){
+    const searchByRegionButton = document.getElementById('buscarBtn');
+    const selectRegion1 = document.getElementById("region1");
+
+    selectRegion1.addEventListener('change', function(){
+        console.log("Cambio de region1");
+    });
+    searchByRegionButton.addEventListener('click', function(){
+        const selectRegion2 = document.getElementById("region2");
+        var region1 = selectRegion1.options[selectRegion1.selectedIndex].value;
+        var region2 = selectRegion2.options[selectRegion2.selectedIndex].value;
+
+        fetch(`${API_URL}region/${region1}`)
+        .then(response1 => response1.json())
+        .then(data1 => {
+            fetch(`${API_URL}region/${region2}`)
+            .then(response2 => {
+                if (response2.ok) {
+                    response2.json().then(data2 => {
+                        var contenido = printRegionInfo(data1.name, data1.damage_relations);
+                        contenido += printRegionInfo(data2.name, data2.damage_relations);
+                        contenido += printHeaderPokemon();
+                        data1.pokemon.forEach(poke => {
+                            fetch(`${API_URL}pokemon/${poke.pokemon.name}`)
+                            .then(responsePoke => responsePoke.json())
+                            .then(dataPoke => {
+                                if(dataPoke.regions.length==2 && 
+                                (dataPoke.regions[0].region.name==region2||dataPoke.regions[1].region.name==region2)){
+                                    contenido += printPokemon
+                                    (dataPoke.id, dataPoke.name, dataPoke.height, dataPoke.weight, dataPoke.regions);
+                                    content.innerHTML = contenido;
+                                }
+                            });
+                        });
+                    });
+                } else {
+                    var contenido = printRegionInfo(data1.name, data1.damage_relations);
+                    contenido += printHeaderPokemon();
+                    data1.pokemon.forEach(poke => {
+                        fetch(`${API_URL}pokemon/${poke.pokemon.name}`)
+                        .then(responsePoke => responsePoke.json())
+                        .then(dataPoke => {
+                            contenido += printPokemon
+                            (dataPoke.id, dataPoke.name, dataPoke.height, dataPoke.weight, dataPoke.regions);
+                            content.innerHTML = contenido;
+                        });
+                    });
+                }
+            });
+        });
+    });
+}

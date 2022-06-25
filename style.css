@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 
 :root{
     --header-height: 100px;
@@ -20,7 +20,7 @@
 /* Cabezera */
 header{
     background: crimson;
-    font-family: Pokemon;
+    font-family: 'Pokemon Solid', sans-serif;
     height: var(--header-height);
     min-width: 400px;
     text-align: center;
@@ -133,7 +133,7 @@ nav{
     align-items: center;
     min-width: 500px;
     background-color: #99B2DD;
-    font-family: Pokemon ;
+    font-family: 'Pokemon Solid', sans-serif;
     color: orange;
     font-size: 25px;
     text-shadow: 3px 3px darkblue;
@@ -175,7 +175,7 @@ nav{
 .nameResult{
     display: flex;
     justify-content: center;
-    font-family: Pokemon;
+    font-family: 'Pokemon Solid', sans-serif;
     color: orange;
     font-size: 25px;
     text-shadow: 3px 3px darkblue;
